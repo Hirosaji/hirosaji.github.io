@@ -20,7 +20,7 @@ var svg = d3.select("body").append("svg")
 var tipBox, tipBoxRect, tipBoxText, tipBoxText1, tipBoxText2, tipBoxText3, tipBoxText4, tipBoxText5;
 
 // データの取得
-d3.csv("../data/data.csv", function(error, dataSet) {
+d3.csv("/data/data.csv", function(error, dataSet) {
   if (error) throw error;
 
   var wordList = [];

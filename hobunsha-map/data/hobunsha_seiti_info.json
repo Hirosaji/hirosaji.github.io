@@ -1,4 +1,10 @@
 {
+    "全作品": [
+        {
+            "title": "全作品",
+            "thumb": "hobunsha.jpg"
+        }
+    ],
     "ひだまりスケッチ": [
         {
             "title": "ひだまりスケッチ",
@@ -21,6 +27,13 @@
             "lat": "35.7003743",
             "lng": "139.7716894",
             "place": "とらのあな秋葉原本店",
+            "thumb": "dojinwork.jpg"
+        },
+        {
+            "title": "ドージンワーク",
+            "lat": "35.750197",
+            "lng": "139.5668763",
+            "place": "あらやしき公園",
             "thumb": "dojinwork.jpg"
         }
     ],
@@ -2499,41 +2512,27 @@
             "title": "夢喰いメリー",
             "lat": "35.311111",
             "lng": "139.487558",
-            "place": "夢喰いメリー江ノ電江ノ島駅",
+            "place": "江ノ電江ノ島駅",
             "thumb": "yumekui.jpg"
         },
         {
             "title": "夢喰いメリー",
             "lat": "35.306668",
             "lng": "139.502115",
-            "place": "夢喰いメリー鎌倉高校前駅踏切",
+            "place": "鎌倉高校前駅踏切",
             "thumb": "yumekui.jpg"
         },
         {
             "title": "夢喰いメリー",
             "lat": "35.334578",
             "lng": "139.489347",
-            "place": "夢喰いメリーイトーヨーカドー藤沢店付近",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "35.335311",
-            "lng": "139.489516",
-            "place": "夢喰いメリーイトーヨーカドー藤沢店付近",
+            "place": "イトーヨーカドー藤沢店付近",
             "thumb": "yumekui.jpg"
         },
         {
             "title": "夢喰いメリー",
             "lat": "37.109324",
             "lng": "138.254217",
-            "place": "高田公園",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.109712",
-            "lng": "138.254539",
             "place": "高田公園",
             "thumb": "yumekui.jpg"
         },
@@ -2546,86 +2545,9 @@
         },
         {
             "title": "夢喰いメリー",
-            "lat": "37.138341",
-            "lng": "138.240591",
-            "place": "まねきねこ上越木田店",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.152484",
-            "lng": "138.258884",
-            "place": "アコーレ",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.148339",
-            "lng": "138.259243",
-            "place": "J-MAX THEATER",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.151997",
-            "lng": "138.247227",
-            "place": "橋",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.11517",
-            "lng": "138.24256",
-            "place": "高田駅前",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.15068",
-            "lng": "138.248493",
-            "place": "橋",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.115388",
-            "lng": "138.242742",
-            "place": "高田駅前クリニック　丸山内科医院",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.109996",
-            "lng": "138.244285",
-            "place": "大島画廊ギャラリー",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.109106",
-            "lng": "138.252811",
-            "place": "高田公園噴水",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.151005",
-            "lng": "138.247742",
-            "place": "橋",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
-            "lat": "37.108676",
-            "lng": "138.256652",
-            "place": "時計",
-            "thumb": "yumekui.jpg"
-        },
-        {
-            "title": "夢喰いメリー",
             "lat": "37.110114",
             "lng": "138.255746",
-            "place": "橋",
+            "place": "片瀬西浜海水浴場",
             "thumb": "yumekui.jpg"
         }
     ],
@@ -2641,28 +2563,42 @@
             "title": "Aチャンネル",
             "lat": "35.692733",
             "lng": "139.44662",
-            "place": "一橋大学脇の路地",
+            "place": "一橋大学西キャンパス 佐野書院前",
             "thumb": "achannel.jpg"
         },
         {
             "title": "Aチャンネル",
             "lat": "35.687082",
             "lng": "139.447738",
-            "place": "ファミリーマート奥の路地",
+            "place": "京王線分倍河原駅 府中５号踏切",
+            "thumb": "achannel.jpg"
+        },
+        {
+            "title": "Aチャンネル",
+            "lat": "35.687082",
+            "lng": "139.447738",
+            "place": "国分寺街道 交差点",
+            "thumb": "achannel.jpg"
+        },
+        {
+            "title": "Aチャンネル",
+            "lat": "35.687082",
+            "lng": "139.447738",
+            "place": "石田歯科前 三叉路",
             "thumb": "achannel.jpg"
         },
         {
             "title": "Aチャンネル",
             "lat": "35.697473",
             "lng": "139.44647",
-            "place": "Royal Host前交差点１",
+            "place": "Royal Host 国立駅前店前１",
             "thumb": "achannel.jpg"
         },
         {
             "title": "Aチャンネル",
             "lat": "35.697491",
             "lng": "139.446931",
-            "place": "Royal Host前交差点２",
+            "place": "Royal Host 国立駅前店前２",
             "thumb": "achannel.jpg"
         },
         {
@@ -2676,21 +2612,7 @@
             "title": "Aチャンネル",
             "lat": "35.688281",
             "lng": "139.447349",
-            "place": "都立国立高校",
-            "thumb": "achannel.jpg"
-        },
-        {
-            "title": "Aチャンネル",
-            "lat": "35.67012",
-            "lng": "139.469233",
-            "place": "駅付近の踏切",
-            "thumb": "achannel.jpg"
-        },
-        {
-            "title": "Aチャンネル",
-            "lat": "35.678",
-            "lng": "139.479667",
-            "place": "マインマート前交差点",
+            "place": "葵ヶ丘高等学校前",
             "thumb": "achannel.jpg"
         },
         {
@@ -2702,30 +2624,37 @@
         },
         {
             "title": "Aチャンネル",
-            "lat": "35.69682",
-            "lng": "139.446496",
-            "place": "紀ノ国屋国立店",
-            "thumb": "achannel.jpg"
-        },
-        {
-            "title": "Aチャンネル",
             "lat": "35.696393",
             "lng": "139.446507",
-            "place": "George\\x27s",
+            "place": "ジョージーズ 国立店前",
             "thumb": "achannel.jpg"
         },
         {
             "title": "Aチャンネル",
-            "lat": "35.6871",
-            "lng": "139.447333",
-            "place": "ファミリーマート",
+            "lat": "35.67012",
+            "lng": "139.469233",
+            "place": "ファミリーマート海田大学通り店前",
             "thumb": "achannel.jpg"
         },
         {
             "title": "Aチャンネル",
             "lat": "35.672315",
             "lng": "139.479954",
-            "place": "駅ホーム",
+            "place": "京王線 府中駅ホーム",
+            "thumb": "achannel.jpg"
+        },
+        {
+            "title": "Aチャンネル",
+            "lat": "35.678",
+            "lng": "139.479667",
+            "place": "マインマート前交差点",
+            "thumb": "achannel.jpg"
+        },
+        {
+            "title": "Aチャンネル",
+            "lat": "35.69682",
+            "lng": "139.446496",
+            "place": "紀ノ国屋国立店",
             "thumb": "achannel.jpg"
         },
         {

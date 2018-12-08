@@ -4,12 +4,13 @@
   d3.queue()
     .defer(d3.json, 'data/hobunsha_seiti_info.json')
     .defer(d3.json, 'data/city-hobunsha.geojson')
-    .defer(d3.json, 'data/pref.geojson')
-    .await(function(_, JSON, cityGeoJSON, prefGeoJSON) {
+    .defer(d3.json, 'data/pref-hobunsha.geojson')
+    .defer(d3.tsv, 'data/hobunsya_anime.tsv')
+    .await(function(_, JSON, cityGeoJSON, prefGeoJSON, animeList) {
 
       var center = [36, 136];
-      var selectTitle = "ひだまりスケッチ";
-      var selectMapStyle = "pin";
+      var selectTitle = "全作品";
+      var selectMapStyle = "paint";
     
       /**********
         Map
@@ -124,27 +125,27 @@
       // switch paint style / pin style event
       switchStyleToggle.on("change", function() {
         var flag = this.checked;
-        // paint
+        // pin
         if (flag) {
+          selectMapStyle = "pin";
+          setMarkers();
+
+          map.removeLayer(prevCityGrid);
+          map.removeLayer(prevPrefGrid);
+        }
+        // paint
+        else {
           selectMapStyle = "paint";
 
           assetLayerGroup.clearLayers();
           setLayer();
         }
-        // pin
-        else {
-          selectMapStyle = "pin";
-          setMarkers(JSON[selectTitle]);
-
-          map.removeLayer(prevCityGrid);
-          map.removeLayer(prevPrefGrid);
-        }
       });
 
       // functions
-      function setLayer(selectTitleData) {
-          var addCityTile = addCanvasTile(cityTileIndex, 256, selectTitle, "city");
-          var addPrefTile = addCanvasTile(prefTileIndex, 256, selectTitle, "pref");
+      function setLayer() {
+          var addCityTile = addCanvasTile(cityTileIndex, 256, selectTitle);
+          var addPrefTile = addCanvasTile(prefTileIndex, 256, selectTitle);
           prevCityGrid.createTile = function(coords, done) {
             var canvas = addPrefTile(coords, done);
             return canvas;
@@ -162,29 +163,34 @@
           d3.select(prefSelector.parentNode).style("z-index", 200);
       }
   
-      function setMarkers(selectTitleData) {
+      function setMarkers() {
           
         assetLayerGroup.clearLayers();
 
-        if(selectTitleData[0].place) {
-        
-          selectTitleData.forEach(d => {
-            var marker = L.marker([d.lat, d.lng], {
-              place: d.place,
-              animeTitle: d.title,
-              bounceOnAdd: true,
-              bounceOnAddOptions: {duration: 500, height: 100},
-              // bounceOnAddCallback: function() { console.log(d.place); }
-            }).on("click", function() {
-              var clickedPlace = d3.select(this).nodes()[0].options.place;
-              selectTitle = d3.select(this).nodes()[0].options.animeTitle;
-              updateAnimeDetailWindow(clickedPlace, selectTitle);
-            });
-            assetLayerGroup.addLayer(marker);
-          })
+        if (selectTitle === "全作品") var targets = animeList.map(a => a.title);
+        else var targets = [selectTitle];
+
+        targets.forEach(target => {
+          if(JSON[target][0].place) {
           
-          map.addLayer(assetLayerGroup);
-        }
+            JSON[target].forEach(d => {
+              var marker = L.marker([d.lat, d.lng], {
+                place: d.place,
+                animeTitle: d.title,
+                bounceOnAdd: true,
+                bounceOnAddOptions: {duration: 500, height: 100},
+                // bounceOnAddCallback: function() { console.log(d.place); }
+              }).on("click", function() {
+                var clickedPlace = d3.select(this).nodes()[0].options.place;
+                selectTitle = d3.select(this).nodes()[0].options.animeTitle;
+                updateAnimeDetailWindow(clickedPlace, selectTitle);
+              });
+              assetLayerGroup.addLayer(marker);
+            })
+            
+            map.addLayer(assetLayerGroup);
+          }
+        })
       }
   
       var clickedOnWindow = false;
@@ -230,7 +236,7 @@
       swiper.on("slideChange", function(d) {
         selectTitle = d.title;
         selectedAnimeTitle.text(selectTitle);
-        if(selectMapStyle === "pin") setMarkers(JSON[selectTitle]);
+        if(selectMapStyle === "pin") setMarkers();
         else {
           map.removeLayer(prevPrefGrid);
           map.removeLayer(prevCityGrid);

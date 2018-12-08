@@ -19,7 +19,7 @@ function addCanvasTile(tileIndex, size, selectTitle) {
     var _fillStyle = "white";
     var _storkeStyle = "black";
 
-    var _lineWidth = 0.1;
+    var _lineWidth = 0.05;
 
     var padding = 8 / 512;
     var totalExtent = 4096 * (1 + padding * 2);
@@ -42,6 +42,12 @@ function addCanvasTile(tileIndex, size, selectTitle) {
         tags = feature.tags;
         
 
+      if (selectTitle === "全作品") {
+        var seitiBool = Object.values(tags.placeCount).some(value => value > 0);
+      } else {
+        var seitiBool = tags.placeCount[selectTitle] > 0;
+      };
+
       if (clickable) {
 
         ctx.fillStyle = tags._pickingColor
@@ -52,24 +58,26 @@ function addCanvasTile(tileIndex, size, selectTitle) {
           : null;
           
       } else if(tileIndex.options.type === "city") {
-
-        ctx.fillStyle = tags.placeCount[selectTitle] > 0
+        
+        ctx.fillStyle = seitiBool
           ? '#F12500'
           : _fillStyle;
         if (tags._setLineDash)
           ctx.setLineDash(tags._setLineDash);
-        ctx.strokeStyle = tags.placeCount[selectTitle] > 0
+        ctx.strokeStyle = seitiBool
           ? '#F12500'
           : _storkeStyle;
         ctx.lineWidth = tags._lineWidth
           ? tags._lineWidth
           : _lineWidth;
 
-      } else {
+      } else if(tileIndex.options.type === "pref") {
 
-        ctx.fillStyle = "rgba(255, 255, 255, 0)";
+        ctx.fillStyle = seitiBool
+          ? "rgba(235, 0, 0, 0.1)"
+          : "rgba(0, 0, 0, 0)";
         ctx.strokeStyle = _storkeStyle;
-        ctx.lineWidth = 0.2;
+        ctx.lineWidth = 0.1;
 
       }
 

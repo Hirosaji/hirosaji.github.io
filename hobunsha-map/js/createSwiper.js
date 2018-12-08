@@ -83,7 +83,7 @@ function createSwiper() {
       .enter()
       .append("img")
       .classed("swiper-slide clickable", true)
-      .attr("src", function(d){ return "img/" + d.thumb; });
+      .attr("src", function(d){ return "img/key_visual/" + d.thumb; });
 
     selectSlide
       .merge(enterSlide)

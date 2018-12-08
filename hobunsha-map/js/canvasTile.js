@@ -19,7 +19,7 @@ function addCanvasTile(tileIndex, size, selectTitle) {
     var _fillStyle = "white";
     var _storkeStyle = "black";
 
-    var _lineWidth = 0.05;
+    var _lineWidth = 0.075;
 
     var padding = 8 / 512;
     var totalExtent = 4096 * (1 + padding * 2);
@@ -77,7 +77,7 @@ function addCanvasTile(tileIndex, size, selectTitle) {
           ? "rgba(235, 0, 0, 0.1)"
           : "rgba(0, 0, 0, 0)";
         ctx.strokeStyle = _storkeStyle;
-        ctx.lineWidth = 0.1;
+        ctx.lineWidth = 0.15;
 
       }
 
